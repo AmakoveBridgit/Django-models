@@ -2,7 +2,10 @@ from django.db import models
 from inventory.models  import Product
 
 
+
 class Cart(models.Model):
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+
     products=models.ManyToManyField(Product)
 
     # python3 makemigrations cart
