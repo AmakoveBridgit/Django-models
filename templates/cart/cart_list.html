@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul{
+        list-style: none;
+        justify-content: space-between;
+    }
+</style>
+
+<body>
+<!--  -->
+<h1>Shopping Cart</h1>
+    <ul >
+        {% for cart_item in cart_items %}
+        <li>
+            {% if cart_item.image %}
+            <img src="{{cart_item.image.url}}" alt="Image"/> <br>
+            {% else %}
+            No Image Available
+        {% endif %}
+              Name: {{ cart_item.name }} <br>
+              Quantity: {{ cart_item.quantity_of_items}}  <br>
+              Price: ${{ cart_item.price }} <br>
+              <a href="{% url 'remove_cart_item' cart_item_id=cart_item.id %}">Remove</a> <br>
+
+        </li>
+        {% endfor %}
+    </ul>
+        <!-- ............ -->
+
+
+
+</body>
+</html>

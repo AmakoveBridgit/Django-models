@@ -9,44 +9,54 @@
    .allproducts{
     display: grid;
     grid-template-columns: repeat(4 ,1fr);
+   
 
-    
    }
    .img{
     width: 50%;
+    /* border: solid rgb(218, 220, 189); */
+   }
+   .view{
+    gap: 30%;
+    /* display: flex; */
+   }
+   .product-container{
+    border: solid rgb(220, 222, 182);
+    gap: 5%;
+    padding: 20px;
+    margin: 10px;
+   }
+   .btn{
+    padding: 10px 20px;
+    color: rgb(252, 246, 246);
+    background-color: rgb(52, 52, 49);
+    border-radius: 30px;
    }
 </style>
 <body>
-    <!-- <table >
-        <th class="content">
-            <td class="title">Title</td>
-            <td>Description</td>
-            <td>Price</td>
-            <td>product Details</td>
-        </th>
-       
-        {% for product in products %}
-        <tr >
-            <td class="tit">{{product.title}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.price}}</td>
-            <td><a href="{% url 'product_detail'  id=product.id%}">view</a></td>
-
-        </tr>
-        {% endfor %}
-    </table> -->
-    <div class="allproducts">
+   
+  
+     <div class="allproducts">
         {% for product in products %}
             <div class="product-container">
                 <img src="{{product.image.url}}" class="img"/>
-                <h1 class="product-name">{{ product.name }}</h1>
+                <h1 class="product-name">{{ product.name }}</h1> 
+                <!-- <button class="btn">Add to cart</button> <br> <br> -->
+
+            
+                
+            
                 <!-- <h4 class="product-description">{{ product.description }}</h4> -->
                 <!-- <h4 class="product-price">{{ product.price }}</h4> -->
-                 <a href="{% url 'product_detail' id=product.id %}">View Details</a>
-            </div>
+                <div class="view">
+                 <a href="{% url 'product_detail' id=product.id %}"> <button class="btn">View Details</button></a> 
+                 <a href="{% url 'product_update' id=product.id %}"> <button class="btn">Edit Product</button></a>
+                </div>
+                
+                     </div>
         {% endfor %}
-    </div>
-   
+    </div> 
+    
     
 </body>
 </html>
