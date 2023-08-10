@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .allproducts{
+            display: grid;
+            grid-template-columns: repeat(4 ,1fr);
+        
+        }
+        .product-container{
+            border: solid rgb(235, 205, 149);
+            padding: 20px;
+            margin: 8px;
+        }
+    </style>
+    <h1>Customer List</h1>
+    <div class="allproducts">
+        {% for customer in customers %}
+            <div class="product-container">
+             <p class="product-name">{{ customer.firstname }} </p> 
+                 <p  class="product-name">{{ customer.lastname }} </p>  
+                 
+                <div class="view">
+                    <a href="{% url 'customer_detail' id=customer.id %}"> <button class="btn">Customer details</button></a> 
+                  
+                     <a href="{% url 'customer_update' id=customer.id %}"> <button class="btn">Edit Product</button></a>
+                       
+                    <a href="{% url 'delete_customer' id=customer.id %}"> <button class="btn">Delete customer</button></a>
+                   </div>
+          
+                     </div>
+        {% endfor %}
+    </div> 
+    
+</body>
+</html>
