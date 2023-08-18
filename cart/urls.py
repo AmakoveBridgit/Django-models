@@ -14,12 +14,8 @@ urlpatterns= [
 
 # ....................
 
-
-
-
     path('cart/add_to_cart/', add_to_cart, name='add_to_cart'),
     path('cart/', cart_list, name='cart_list'),
-
     path('cart/remove/<int:cart_item_id>/', remove_cart_item, name='remove_cart_item'),
 
 ]

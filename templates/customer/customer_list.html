@@ -13,9 +13,10 @@
         
         }
         .product-container{
-            border: solid rgb(235, 205, 149);
+            box-shadow: 0 2px 2px 2px;
             padding: 20px;
             margin: 8px;
+            background-color: rgb(245, 197, 176);
         }
     </style>
     <h1>Customer List</h1>
@@ -26,11 +27,9 @@
                  <p  class="product-name">{{ customer.lastname }} </p>  
                  
                 <div class="view">
-                    <a href="{% url 'customer_detail' id=customer.id %}"> <button class="btn">Customer details</button></a> 
                   
                      <a href="{% url 'customer_update' id=customer.id %}"> <button class="btn">Edit Product</button></a>
                        
-                    <a href="{% url 'delete_customer' id=customer.id %}"> <button class="btn">Delete customer</button></a>
                    </div>
           
                      </div>

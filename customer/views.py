@@ -1,8 +1,8 @@
 
 from.forms import CustomerForm
 from customer.models import Customer
-from django.shortcuts import render,redirect
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
+
 def customer_upload_view(request):
     if request.method=="POST":
         form=CustomerForm(request.POST)

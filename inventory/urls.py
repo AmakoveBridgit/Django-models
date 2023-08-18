@@ -12,3 +12,4 @@ urlpatterns= [
     path("products/edit/<int:id>",product_update_view,name="product_update"),
 ]
 
+
