@@ -7,5 +7,4 @@ class ProductCartForm(forms.ModelForm):
         model = Cart
         fields = "__all__"
 
-# ....................
      

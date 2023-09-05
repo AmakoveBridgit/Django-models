@@ -17,6 +17,7 @@ def customer_list(request):
 def customer_detail(request,id):
     customer=Customer.objects.get(id=id)
     return render(request,"customer/customer_detail.html",{"customer":customer})
+
 def customer_update_view(request,id):
     customer=Customer.objects.get(id=id)
     if request.method=="POST":
@@ -27,6 +28,7 @@ def customer_update_view(request,id):
     else:
         form=   CustomerForm(instance=customer)
         return render(request,"customer/edit_customer.html",{"form":form})
+    
 def delete_customer(request, id):
     customer = get_object_or_404(Customer, id=id)
     if request.method == 'POST':

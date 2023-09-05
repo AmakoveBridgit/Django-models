@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+.vendor-info{
+}
+.main{
+
+
+}
+</style>
 <body>
-    <h2>Vendor Detail: {{ vendor.name }}</h2>
-    <a href="{% url 'vendor_edit' vendor.pk %}">Edit</a>
-    <a href="{% url 'vendor_delete' vendor.pk %}">Delete</a>
+    <div class="main">
+    <h2>Vendor Detail</h2>
+    <div class="vendor-info">
+        <p class="name">Name: {{ vendor.name }}</p>
+        <p >Email: {{ vendor.email }}</p>
+      </div>
+   <a class="edit-link" href="{% url 'vendor:vendor_edit' vendor.pk %}">Edit Vendor</a> <br></button> 
+ <button>    <a class="delete-link" href="{% url 'vendor:vendor_delete' vendor.pk %}">Delete Vendor</a> <br></button>   
+ <button>    <a class="back-link" href="{% url 'vendor:vendor_list' %}">Back to Vendor List</a> <br></button> 
+    </div>
 </body>
 </html>
